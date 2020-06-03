@@ -29,8 +29,7 @@ function App() {
             'stockPrice': stock[1], 
             'dateTime': Date.now(), 
             'isNewPriceHigher': isNewPriceHigher 
-          }).then(value => console.log(value))
-          .catch(err => console.log(err))
+          }).catch(err => console.log(err))
         }).catch(err => console.log(err))
         return stock
       })
