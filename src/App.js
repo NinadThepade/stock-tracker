@@ -7,7 +7,7 @@ import './App.css';
 
 function App() {
   const [data, setData] = useState([]);
-  const ENDPOINT = 'ws://stocks.mnet.website';
+  const ENDPOINT = window.location.protocol === 'https:' ? 'wss://stocks.mnet.website' : 'ws://stocks.mnet.website';
 
   useEffect(() => {
     const ws = new WebSocket(ENDPOINT);
