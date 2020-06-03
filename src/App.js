@@ -1,10 +1,11 @@
 import React from 'react';
+import StockListContainer from './components/StockListContainer/StockListContainer'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      Hello from App.js
+      <StockListContainer />
     </div>
   );
 }
