@@ -1,9 +1,20 @@
 .stock-row {
   display: flex;
   justify-content: space-between;
-  width: 500px;
+  width: 600px;
 }
 
-.stock-name {
+.stock-name, .stock-date, .stock-time {
   width: 100px;
+}
+
+.stock-price {
+  width: 300px;
+}
+.stock-price-higher {
+  background-color: green;
+}
+
+.stock-price-lower {
+  background-color: red;
 }
