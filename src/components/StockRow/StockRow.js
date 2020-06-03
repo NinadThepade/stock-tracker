@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Fragment } from 'react'
 
 import './StockRow.css'
 
@@ -14,12 +14,12 @@ const StockRow = ({stock}) => {
   },[stock])
 
   return (
-    <div className="stock-row">
-      <div className="stock-name">{ stock.stockName }</div>
-      <div className={`stock-price ${stock.isNewPriceHigher ? "stock-price-higher" : "stock-price-lower"}`}>{ stock.stockPrice }</div>
-      <div className="stock-date">{ date }</div>
-      <div className="stock-time">{ time }</div>
-    </div>
+    <Fragment className="stock-row">
+      <td className="stock-name">{ stock.stockName }</td>
+      <td className={`stock-price ${stock.isNewPriceHigher ? "stock-price-higher" : "stock-price-lower"}`}>{ stock.stockPrice }</td>
+      <td className="stock-date">{ date }</td>
+      <td className="stock-time">{ time }</td>
+    </Fragment>
   )
 }
 

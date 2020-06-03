@@ -21,13 +21,21 @@ const StockListContainer = () => {
   },[data]);
 
   return (
-    <div className="stock-container">
-      {data.map((stock, index) => (
-        <div key={index}>
+    <table className="stock-container">
+      <thead>
+        <th>Stock Code</th>
+        <th>Stock Price</th>
+        <th>Last Updated Date</th>
+        <th>Last Updated Time</th>
+      </thead>
+      <tbody>
+        {data.map((stock, index) => (
+        <tr key={index}>
           <StockRow stock={stock} />
-        </div>
-    ))}
-    </div>
+        </tr>
+        ))}
+      </tbody>
+    </table>
   )
 }
 
