@@ -1,5 +1,7 @@
 # stock-tracker
-Simple react app to track stocks using websockets
+Simple react app to track stocks using websockets and indexedDB
+
+Demo: https://ninadthepade.github.io/stock-tracker/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
