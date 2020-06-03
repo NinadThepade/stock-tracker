@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import StockRow from '../StockRow/StockRow'
 
 const StockListContainer = () => {
   const [data, setData] = useState([]);
@@ -22,7 +23,13 @@ const StockListContainer = () => {
 
   console.log('data: ', data)
   return (
-    <div> Hello from StockListContainer</div>
+    <div>
+      {data.map((stock, index) => (
+      <div key={index}>
+        <StockRow stock={stock} />
+      </div>
+    ))}
+    </div>
   )
 }
 
