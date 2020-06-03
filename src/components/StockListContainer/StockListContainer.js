@@ -23,10 +23,12 @@ const StockListContainer = () => {
   return (
     <table className="stock-container">
       <thead>
+        <tr>
         <th>Stock Code</th>
         <th>Stock Price</th>
         <th>Last Updated Date</th>
         <th>Last Updated Time</th>
+        </tr>
       </thead>
       <tbody>
         {data.map((stock, index) => (

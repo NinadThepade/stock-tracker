@@ -14,7 +14,7 @@ const StockRow = ({stock}) => {
   },[stock])
 
   return (
-    <Fragment className="stock-row">
+    <Fragment>
       <td className="stock-name">{ stock.stockName }</td>
       <td className={`stock-price ${stock.isNewPriceHigher ? "stock-price-higher" : "stock-price-lower"}`}>{ stock.stockPrice }</td>
       <td className="stock-date">{ date }</td>
