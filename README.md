@@ -1,7 +1,9 @@
 # stock-tracker
 Simple react app to track stocks using websockets and indexedDB
+and server with express, nodejs
 
 Demo: https://ninadthepade.github.io/stock-tracker/
+Proxy Server: https://react-proxy-server.herokuapp.com/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
