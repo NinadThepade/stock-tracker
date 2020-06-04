@@ -10,7 +10,7 @@ let socket;
 
 function App() {
   const [data, setData] = useState([]);
-  const ENDPOINT = 'localhost:5000';
+  const ENDPOINT = 'https://react-proxy-server.herokuapp.com/';
 
   useEffect(() => {
     socket = io(ENDPOINT);

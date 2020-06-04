@@ -7,6 +7,7 @@ const url = 'ws://stocks.mnet.website';
 const app = express()
 const server = http.createServer(app)
 const io = socketIO(server)
+const cors = require('cors')
 
 const router = require ('./router')
 
@@ -31,5 +32,6 @@ io.on('connection', (socket) => {
 })
 
 app.use(router)
+app.use(cors)
 
 server.listen(PORT, () => console.log(`Server started on port ${PORT}`))
