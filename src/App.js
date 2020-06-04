@@ -24,7 +24,7 @@ function App() {
         // check if the item already exists in DB
         localforage.getItem(stock[0]).then(value => {
           // This code runs once the value has been loaded from the offline store.
-          isNewPriceHigher = (value.stockPrice < stock[1])
+          isNewPriceHigher = value ? (value.stockPrice < stock[1]) : false
 
           // set the item to the db
           localforage.setItem(stock[0], {
