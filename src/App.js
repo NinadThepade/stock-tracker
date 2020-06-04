@@ -1,22 +1,25 @@
 import React, { useState, useEffect } from 'react'
+import io from "socket.io-client";
 import {default as localforage} from 'localforage'
 
 import StockListContainer from './components/StockListContainer/StockListContainer'
 
 import './App.css';
 
+let socket;
+
 function App() {
   const [data, setData] = useState([]);
-  const ENDPOINT = 'ws://stocks.mnet.website';
+  const ENDPOINT = 'localhost:5000';
 
   useEffect(() => {
-    const ws = new WebSocket(ENDPOINT);
+    socket = io(ENDPOINT);
 
-    ws.onmessage = (event) => {
-      const response = JSON.parse(event.data);
+    socket.on('message', (event) => {
+      console.log(event)
+      const response = JSON.parse(event);
 
       let test = response.map(stock => {
-
         let isNewPriceHigher;
         // check if the item already exists in DB
         localforage.getItem(stock[0]).then(value => {
@@ -35,14 +38,13 @@ function App() {
       })
 
       setData(test);
-    };
-    ws.onclose = () => {
-      ws.close();
-    };
+    })
 
     return () => {
-      ws.close();
-    };
+      socket.emit('disconnect')
+
+      socket.off()
+    }
   }, [ENDPOINT]);
 
   return (
